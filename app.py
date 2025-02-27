@@ -23,6 +23,7 @@ css = """
 </style>
 """
 st.markdown(css, unsafe_allow_html=True)
+# Heading
 st.markdown('<h1 class="title">UNIT CONVERTER</h1>', unsafe_allow_html=True)
 # Select conversion type
 conversion_type = option_menu(
@@ -41,11 +42,13 @@ conversion_type = option_menu(
         "nav-link-selected":{"background-color":"rgb(195 20 50)"}
     }
 )
-
+# If the user selects 'Length' from the conversion types, then all length units should be displayed
 if conversion_type == "Length":
     units = ('foot', 'yard', 'inch', 'metre', 'kilometre', 'centimetre', 'millimetre')
-    conversion_factors = {
-        ('inch', 'centimetre'): 2.54, ('centimetre', 'inch'): 1 / 2.54,
+    conversion_factors = { # this is the dictionary it has all data like if else chain
+                          
+        ('inch', 'centimetre'): 2.54, ('centimetre', 'inch'): 1 / 2.54, 
+        # ↑ this is like "1 inch = 2.54 centimetres" like user enter 5 then "5 inches * 2.54 = 12.7 centimetres and" if select opposite then the like 5cm then "5cm * (1÷2.54) = 0.393 something " 5 x 0.393 = 1.965 " " 
         ('millimetre', 'inch'): 1 / 25.4, ('inch', 'millimetre'): 25.4,
         ('inch', 'metre'): 1 / 39.3701, ('metre', 'inch'): 39.3701,
         ('foot', 'yard'): 1 / 3, ('yard', 'foot'): 3,
@@ -65,6 +68,7 @@ elif conversion_type == "Weight":
         ('kilogram', 'pound'): 2.20462, ('pound', 'kilogram'): 1 / 2.20462,
         ('pound', 'ounce'): 16, ('ounce', 'pound'): 1 / 16
     }
+
 
 # User input
 st.markdown('<h4 class="elms">INSERT</h4>', unsafe_allow_html=True)
