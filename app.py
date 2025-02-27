@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import time
 
 st.set_page_config(page_icon="📝", page_title="Unit Converter")
@@ -24,7 +25,22 @@ css = """
 st.markdown(css, unsafe_allow_html=True)
 
 # Select conversion type
-conversion_type = st.radio("Select Conversion Type", ("Length", "Weight"))
+conversion_type = option_menu(
+    menu_title=None,
+    options=["Weight","Length"],
+    orientation="horizontal",
+    icons=["arrow-90deg-down","arrow-90deg-down"],
+    default_index=0,
+    styles={
+        "container": {"padding":"5px","background-color":"rgb(46 11 45)"},
+        "icon":{"color":"white","font-size":"25px"},
+        "nav-link":{"font-size":"25px",
+               "text-align":"left",
+               "margin":"2px",
+                },
+        "nav-link-selected":{"background-color":"rgb(195 20 50)"}
+    }
+)
 
 if conversion_type == "Length":
     st.markdown('<h1 class="title">UNIT CONVERTER " LENGTH "</h1>', unsafe_allow_html=True)
