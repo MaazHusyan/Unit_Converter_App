@@ -15,8 +15,8 @@ css = """
         font-size: 3rem;
     }
     .elms {
-        text-align: left;
-        background: linear-gradient(60deg, rgb(195 20 50), rgb(36 11 54), rgb(36 11 54));
+        text-align: center;
+        background: linear-gradient(60deg, rgb(195 20 50), rgb(36 11 54));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
