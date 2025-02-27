@@ -23,7 +23,7 @@ css = """
 </style>
 """
 st.markdown(css, unsafe_allow_html=True)
-
+st.markdown('<h1 class="title">UNIT CONVERTER</h1>', unsafe_allow_html=True)
 # Select conversion type
 conversion_type = option_menu(
     menu_title=None,
@@ -43,7 +43,6 @@ conversion_type = option_menu(
 )
 
 if conversion_type == "Length":
-    st.markdown('<h1 class="title">UNIT CONVERTER " LENGTH "</h1>', unsafe_allow_html=True)
     units = ('foot', 'yard', 'inch', 'metre', 'kilometre', 'centimetre', 'millimetre')
     conversion_factors = {
         ('inch', 'centimetre'): 2.54, ('centimetre', 'inch'): 1 / 2.54,
@@ -58,7 +57,6 @@ if conversion_type == "Length":
         ('kilometre', 'metre'): 1000, ('metre', 'kilometre'): 1 / 1000
     }
 elif conversion_type == "Weight":
-    st.markdown('<h1 class="title">UNIT CONVERTER " WEIGHT "</h1>', unsafe_allow_html=True)
     units = ('kilogram', 'gram', 'milligram', 'pound', 'ounce')
     conversion_factors = {
         ('kilogram', 'gram'): 1000, ('gram', 'kilogram'): 1 / 1000,
